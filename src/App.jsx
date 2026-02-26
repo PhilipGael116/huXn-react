@@ -1,12 +1,21 @@
-import React from 'react'
-import Greeting from './components/Greeting'
-import ProductInfo from './components/ProductInfo'
+import UserList from "./components/UserList";
+import ProductList from "./components/ProductList";
 
 const App = () => {
+  const list = [1,2,3,4,5];
+
   return (
     <div>
-      <Greeting />
-      <ProductInfo />
+      {
+        list.map((number) => (
+          <ul key={number}>
+            <li>{number}</li>
+          </ul>
+        ))
+      }
+
+      <UserList />
+      <ProductList />
     </div>
   )
 }
