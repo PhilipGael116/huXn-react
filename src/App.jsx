@@ -1,33 +1,26 @@
-import Weather from "./components/Weather"
-import UserStatus from "./components/UserStatus"
-import Greeting from "./components/Greeting"
+import React from 'react'
 
-const ValidPassword = () => <h1>Valid Password</h1>
+const Button = () => {
+  const handleClick = () =>
+   console.log(Math.round((Math.random() * 10)))
+  
 
-const InvalidPassword = () => <h1>Invalid Password</h1>
+  return <button onClick={handleClick}>Click</button>
+};
 
+const Copy = () => {
+  const handleCopy = () => {
+    console.log("Do not try to copy content on this webpage")
+  }
 
-const Password = ({ isValid }) => 
- isValid ? <ValidPassword /> : <InvalidPassword />
+  return <p onCopy={handleCopy}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus beatae sequi voluptates ab sunt recusandae sit minima nulla facilis at.</p>
+}
 
 const App = () => {
-  const items = ["Wireless Earbuds", "New SSD", "Hoodie"];
-
-  console.log(items);
-
   return (
     <div>
-      <h1>Cart 🛒</h1>
-      {items.length > 0 && <h2>You have {items.length} items in your cart</h2> }
-
-      {items.map((item) => (
-        <li key={Math.random()}>{item}</li>
-      ))}
-
-      <Password isValid={false} />
-      <Weather temperaature={45} />
-      <UserStatus loggedIn={true} isAdmin={true}/>
-      <Greeting timeOfDay="morning" />
+      <Button />
+      <Copy />
     </div>
   )
 }
